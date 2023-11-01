@@ -1,33 +1,41 @@
 {
   "project_info": {
-    "project_number": "90290616083",
-    "project_id": "vazo-growth",
-    "storage_bucket": "vazo-growth.appspot.com"
+    "project_number": "363179202701",
+    "project_id": "trongtin-dev",
+    "storage_bucket": "trongtin-dev.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:90290616083:android:c6edbf27f1588eeda04ce6",
+        "mobilesdk_app_id": "1:363179202701:android:b588b0ba8f8555a1182ac4",
         "android_client_info": {
-          "package_name": "com.example.wol"
+          "package_name": "dev.trongtin.wakeonlan"
         }
       },
       "oauth_client": [
         {
-          "client_id": "90290616083-3hrkcu2660db8u86r3u3dnom1m2kl6dl.apps.googleusercontent.com",
+          "client_id": "363179202701-7svva6abip3867dnivmjf9rcj07nh2h3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dev.trongtin.wakeonlan",
+            "certificate_hash": "aec567962d16fff600f0516c7406369a7a2ed8d3"
+          }
+        },
+        {
+          "client_id": "363179202701-20e1hjdvekmnmfq28nfp9e00arqdonun.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDavtSbVhshYvEsBm0kgwaaHUUdByDVCsU"
+          "current_key": "AIzaSyCKg9UteNv3wFv9ZmdR45b2WM612ObLKHQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "90290616083-3hrkcu2660db8u86r3u3dnom1m2kl6dl.apps.googleusercontent.com",
+              "client_id": "363179202701-20e1hjdvekmnmfq28nfp9e00arqdonun.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

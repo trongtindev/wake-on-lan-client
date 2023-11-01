@@ -1,4 +1,4 @@
-package com.example.wol
+package dev.trongtin.wakeonlan
 
 import io.flutter.embedding.android.FlutterActivity
 
