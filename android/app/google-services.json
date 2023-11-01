@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "90290616083",
+    "project_id": "vazo-growth",
+    "storage_bucket": "vazo-growth.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:90290616083:android:c6edbf27f1588eeda04ce6",
+        "android_client_info": {
+          "package_name": "com.example.wol"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "90290616083-3hrkcu2660db8u86r3u3dnom1m2kl6dl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDavtSbVhshYvEsBm0kgwaaHUUdByDVCsU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "90290616083-3hrkcu2660db8u86r3u3dnom1m2kl6dl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
