@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
@@ -7,27 +6,25 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:wakelock/wakelock.dart';
-import 'firebase_options.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import './utils/wol.dart';
 
 @pragma('vm:entry-point')
 Future<void> _firebaseMessagingHandler(RemoteMessage message) async {
-  if (Firebase.apps.isEmpty) {
+  try {
     await Firebase.initializeApp();
-  }
-
-  print("Handling a message: ${message.data}");
-  if (message.data['mac'] != null && message.data['ipv4'] != null) {
-    wake(message.data['mac'], message.data['ipv4']);
+    print("Handling a backround message: ${message.data}");
+    if (message.data['mac'] != null && message.data['ipv4'] != null) {
+      await wake(message.data['mac'], message.data['ipv4']);
+    }
+  } catch (error) {
+    print(error);
   }
 }
 
 main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  await Firebase.initializeApp();
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingHandler);
   runApp(const MyApp());
 }
@@ -109,10 +106,7 @@ class SinglePageState extends State<SinglePage> {
     if (auth.currentUser == null) return;
     await FirebaseMessaging.instance.requestPermission(provisional: true, sound: false, alert: false);
     await messasing.subscribeToTopic('wol.${auth.currentUser!.uid}');
-    FirebaseMessaging.onMessage.listen((event) {
-      onPressedWake();
-      _firebaseMessagingHandler(event);
-    });
+    FirebaseMessaging.onMessage.listen((event) => onPressedWake());
   }
 
   signInWithCredential() async {
