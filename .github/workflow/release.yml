@@ -1,0 +1,13 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - release
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: Dank-del/flutter-build-and-publish-action@v1
