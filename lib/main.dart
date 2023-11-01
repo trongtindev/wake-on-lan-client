@@ -137,7 +137,7 @@ class SinglePageState extends State<SinglePage> {
                   controller: ipv4,
                   decoration: const InputDecoration(
                     labelText: 'IPv4',
-                    hintText: '0.0.0.0',
+                    hintText: '192.168.0.255',
                   ),
                 ),
               ],
