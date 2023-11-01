@@ -12,8 +12,8 @@ import './utils/wol.dart';
 @pragma('vm:entry-point')
 Future<void> _firebaseMessagingHandler(RemoteMessage message) async {
   try {
-    await Firebase.initializeApp();
     print("Handling a backround message: ${message.data}");
+    await Firebase.initializeApp();
     if (message.data['mac'] != null && message.data['ipv4'] != null) {
       await wake(message.data['mac'], message.data['ipv4']);
     }
@@ -104,7 +104,7 @@ class SinglePageState extends State<SinglePage> {
 
   subscribeToTopic() async {
     if (auth.currentUser == null) return;
-    await FirebaseMessaging.instance.requestPermission(provisional: true, sound: false, alert: false);
+    await FirebaseMessaging.instance.requestPermission(provisional: true);
     await messasing.subscribeToTopic('wol.${auth.currentUser!.uid}');
     FirebaseMessaging.onMessage.listen((event) => onPressedWake());
   }
